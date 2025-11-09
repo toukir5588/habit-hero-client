@@ -4,6 +4,8 @@ import { toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../contexts/AuthContext";
+import { motion } from "motion/react"
+import AnimationY from "../../Animation/AnimationY";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -71,7 +73,8 @@ const Register = () => {
 
   return (
     <div className="w-11/12 mx-auto my-10 flex justify-center items-center text-primary">
-      <div className="card gb-gradient w-full max-w-sm shrink-0  shadow-2xl">
+     <AnimationY>
+         <div className="card gb-gradient w-full max-w-sm shrink-0  shadow-2xl">
         <div className="card-body">
           <h1 className="text-2xl font-bold text-center">
             Create Your account
@@ -124,7 +127,9 @@ const Register = () => {
                 />
               </div>
               <div></div>
-              <button className="btn btn-neutral mt-4">Register</button>
+              <button
+             
+              className="btn btn-neutral mt-4">Register</button>
             </fieldset>
           </form>
 
@@ -136,6 +141,7 @@ const Register = () => {
           </p>
         </div>
       </div>
+     </AnimationY>
     </div>
   );
 };

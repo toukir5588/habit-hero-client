@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, Navigate, NavLink, useNavigate } from 'react-router';
+import { motion } from "motion/react"
 
 import userImg from '../../assets/user1.png'
 
@@ -75,7 +76,11 @@ const Navbar = () => {
     <Link  onClick={handleLogout} className="btn btn-secondary w-full mt-5">Logout</Link>
   </div>
 </div>
-:  <Link to='/login' className="btn">Login</Link>
+:  <motion.div
+        whileTap={{
+            scale:0.8
+        }}
+ className='btn btn-primary'><Link to='/login' className="">Login</Link></motion.div>
  }
   </div>
 </div>
