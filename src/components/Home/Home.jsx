@@ -1,12 +1,16 @@
 import React from 'react';
-import LatestHabits from '../../LatestHabits/LatestHabits';
+import LatestHabits from '../LatestHabits/LatestHabits';
+import Hero from '../Hero/Hero';
 
 const Home = () => {
     return (
-        <div>
-            <h3 className='bg-primary'>this is home</h3>
+    <div>
+            <Hero/>
+           
+            
             <LatestHabits/>
-        </div>
+        
+    </div>
     );
 };
 

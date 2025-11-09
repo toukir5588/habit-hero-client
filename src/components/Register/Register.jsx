@@ -6,6 +6,8 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../contexts/AuthContext";
 import { motion } from "motion/react"
 import AnimationY from "../../Animation/AnimationY";
+import AnimationLTR from "../../Animation/AnimationLTR";
+import AnimationRTL from "../../Animation/AnimationRTL";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -83,31 +85,41 @@ const Register = () => {
             <fieldset className="fieldset md:w-80">
               {/* name */}
               <label className="label">Name</label>
+                 <AnimationLTR>
+                
               <input
                 type="text"
                 name="name"
                 className="input text-[#059669]"
                 placeholder="Your Name"
                 required
-              />
+                />
+                </AnimationLTR>
               {/* photoURL */}
               <label className="label">Photo URL</label>
+
+         <AnimationRTL>
+                    
               <input
                 type="text"
                 name="photoURL"
                 className="input text-[#059669]"
                 placeholder="Photo URL"
                 required
-              />
+                />
+                </AnimationRTL>
               {/* email */}
               <label className="label">Email</label>
+              <AnimationLTR>
+
               <input
                 type="email"
                 name="email"
                 className="input text-[#059669]"
                 placeholder="Email"
                 required
-              />
+                />
+                </AnimationLTR>
               {/* password */}
               <div className="relative">
                 <label className="label">Password</label>
@@ -119,17 +131,27 @@ const Register = () => {
                   
                   {eye ? <FaEye size={20} />: <FaEyeSlash size={20} />}
                 </button>
+                <AnimationRTL>
+                    
+                
                 <input
                   type={eye ? "text" : "password"}
                   name="password"
                   className="input text-[#059669]"
                   placeholder="Password"
-                />
+                  />
+                  </AnimationRTL>
               </div>
-              <div></div>
+              <div>
+
+              
+              </div>
+                 <AnimationLTR>
+                
               <button
              
-              className="btn btn-neutral mt-4">Register</button>
+             className="btn btn-neutral w-full mt-4">Register</button>
+             </AnimationLTR>
             </fieldset>
           </form>
 

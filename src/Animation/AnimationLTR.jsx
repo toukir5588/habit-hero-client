@@ -26,7 +26,7 @@ const AnimationLTR = ({children}) => {
          initial="hidden"
          animate={mainControl}
          transition={{
-            direction:0.8,delay:0.45
+            direction:1,delay:0.45
          }}
          >
             {children}
