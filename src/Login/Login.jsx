@@ -1,43 +1,142 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../contexts/AuthContext';
+import React, { use, useContext, useRef, useState } from "react";
+import { FcGoogle } from "react-icons/fc";
+import { Link, useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { AuthContext } from "../contexts/AuthContext";
 
 const Login = () => {
+  const { signUpGoogle, signInGoogle, setUser, forgotPasswordFunc } =
+    use(AuthContext);
+  const [eye, setEye] = useState(false);
+  const navigate = useNavigate();
+  const emailRef = useRef(null);
 
-    const {signInWithGoogle, setUser} = useContext(AuthContext)
+  const handleGoogleSignin = () => {
+    signUpGoogle()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        toast.success("your account is success");
+        navigate("/category/1");
 
-      const handleGoogleSignIn = () => {
-        signInWithGoogle()
-          .then((result) => {
-            console.log(result.user);
-            const newUser = {
-              name: result.user.displayName,
-              email: result.user.email,
-              image: result.user.photoURL,
-            };
-    
-            // create user in the database
-            fetch("http://localhost:3000/users", {
-              method: "POST",
-              headers: {
-                "content-type": "application/json",
-              },
-              body: JSON.stringify(newUser),
-            })
-              .then((res) => res.json())
-              .then((data) => {
-                console.log("data after user save", data);
-              });
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      };
-    return (
-        
-        <div>
-            <h1>this is login</h1>
+        // console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+        // ..
+      });
+  };
+
+  const handleEye = () => {
+    // console.log("onclick");
+    setEye(!eye);
+  };
+
+  const handleEmailSignin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    const email = form.email.value;
+    const password = form.password.value;
+    // console.log(email, password);
+
+    signInGoogle(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        // console.log(user);
+
+        toast.success("your account is success");
+        // console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+        // ..
+      });
+  };
+
+  const handleForgotPassword = () => {
+    const email = emailRef.current.value;
+    if(!email){
+      toast.error("please giv your email address");
+      return;
+    }
+    forgotPasswordFunc(email)
+      .then(() => {
+        toast.success("Password reset email sent!");
+        // console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+        // ..
+      });
+  };
+
+  return (
+    <div className="w-11/12 mx-auto my-10 flex justify-center items-center text-primary">
+      <div className="card gb-gradient w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="card-body">
+          <h1 className="text-2xl font-bold text-center">Login your account</h1>
+          <form onSubmit={handleEmailSignin}>
+            <fieldset className="fieldset">
+              <label className="label">Email</label>
+              <input
+                ref={emailRef}
+                type="email"
+                name="email"
+                className="input text-[#059669]"
+                placeholder="Email"
+              />
+              <div className="relative">
+                <label className="label">Password</label>
+                <button
+                  type="button"
+                  onClick={handleEye}
+                  className=" bg-transparent outline-0 border-0 cursor-pointer absolute top-[28px] right-[30px] z-10"
+                >
+                  
+                  {eye ? <FaEye size={20} />: <FaEyeSlash size={20} />}
+                </button>
+                <input
+                  type={eye ? "text" : "password"}
+                  name="password"
+                  className="input text-[#059669]"
+                  placeholder="Password"
+                />
+              </div>
+              <div>
+                <button
+                  type="button"
+                  onClick={handleForgotPassword}
+                  className="link link-hover"
+                >
+                  Forgot password?
+                </button>
+              </div>
+              <button className="btn btn-neutral mt-4">Login</button>
+            </fieldset>
+          </form>
+          <button onClick={handleGoogleSignin} className="btn btn-primary mt-4">
+            <FcGoogle /> SignUp With Google
+          </button>
+
+          <p className=" font-medium text-center">
+            You have a don't account pleas{" "}
+            <Link className="text-blue-700 hover:underline" to="/register">
+              Register
+            </Link>
+          </p>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Login;

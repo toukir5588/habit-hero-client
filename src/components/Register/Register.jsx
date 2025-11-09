@@ -70,8 +70,8 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+    <div className="w-11/12 mx-auto my-10 flex justify-center items-center text-primary">
+      <div className="card gb-gradient w-full max-w-sm shrink-0  shadow-2xl">
         <div className="card-body">
           <h1 className="text-2xl font-bold text-center">
             Create Your account
@@ -83,7 +83,7 @@ const Register = () => {
               <input
                 type="text"
                 name="name"
-                className="input"
+                className="input text-[#059669]"
                 placeholder="Your Name"
                 required
               />
@@ -92,7 +92,7 @@ const Register = () => {
               <input
                 type="text"
                 name="photoURL"
-                className="input"
+                className="input text-[#059669]"
                 placeholder="Photo URL"
                 required
               />
@@ -101,7 +101,7 @@ const Register = () => {
               <input
                 type="email"
                 name="email"
-                className="input"
+                className="input text-[#059669]"
                 placeholder="Email"
                 required
               />
@@ -111,7 +111,7 @@ const Register = () => {
                 <button
                   type="button"
                   onClick={handleEye}
-                  className="btn bg-transparent outline-0 border-0 absolute top-[20px] right-[0px] z-10"
+                  className="btn bg-transparent outline-0 border-0 absolute top-[18px] right-[0px] z-10"
                 >
                   
                   {eye ? <FaEye size={20} />: <FaEyeSlash size={20} />}
@@ -119,7 +119,7 @@ const Register = () => {
                 <input
                   type={eye ? "text" : "password"}
                   name="password"
-                  className="input"
+                  className="input text-[#059669]"
                   placeholder="Password"
                 />
               </div>
@@ -128,9 +128,9 @@ const Register = () => {
             </fieldset>
           </form>
 
-          <p className="text-lg font-medium text-center">
-            You hav a Already account pleas{" "}
-            <Link className="text-blue-700 hover:underline" to="/auth/login">
+          <p className=" font-medium text-center">
+            You have a Already account pleas{" "}
+            <Link className="text-blue-700 hover:underline" to="/login">
               Login
             </Link>
           </p>
