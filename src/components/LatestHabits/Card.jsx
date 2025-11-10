@@ -10,7 +10,7 @@ const Card = ({ habit }) => {
     <AnimationY>
       <div>
         <StyledWrapper>
-          <div className="card">
+          <div className="card space-y-5">
            <AnimationLTR>
              <div className="w-full h-[200px]">
               <img

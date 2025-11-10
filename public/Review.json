@@ -1,0 +1,184 @@
+[
+  {
+    "id": "card_001",
+    "title": "Healthy Morning Routine",
+    "rating": 4.9,
+    "rating_scale": 5.0,
+    "reviews_count": 8,
+    "summary": "Building a morning routine completely changed my productivity!",
+    "excerpt": "Starting the day with mindfulness and planning transformed my focus...",
+    "reviewer": {
+      "name": "Mira Anand",
+      "roles": ["Physician", "Wellness Coach"],
+      "avatar": "https://example.com/avatars/mira_anand.jpg"
+    },
+    "theme": {
+      "background_color": "#00A870",
+      "text_color": "#FFFFFF"
+    },
+    "created_at": "2025-11-10T10:23:00Z"
+  },
+  {
+    "id": "card_002",
+    "title": "Mindful Eating Habits",
+    "rating": 4.8,
+    "rating_scale": 5.0,
+    "reviews_count": 15,
+    "summary": "Learning to eat mindfully helped me control my cravings.",
+    "excerpt": "Simple awareness during meals made a huge difference...",
+    "reviewer": {
+      "name": "Rafiq S.",
+      "roles": ["Nutritionist"],
+      "avatar": "https://example.com/avatars/rafiq_s.jpg"
+    },
+    "theme": {
+      "background_color": "#0FA678",
+      "text_color": "#FFFFFF"
+    },
+    "created_at": "2025-10-02T08:12:45Z"
+  },
+  {
+    "id": "card_003",
+    "title": "Consistent Sleep Schedule",
+    "rating": 5.0,
+    "rating_scale": 5.0,
+    "reviews_count": 6,
+    "summary": "A fixed bedtime improved my mood and focus tremendously.",
+    "excerpt": "Sleeping at the same time daily made me feel more energetic...",
+    "reviewer": {
+      "name": "Leena Kapoor",
+      "roles": ["Health Coach"]
+    },
+    "theme": {
+      "background_color": "#019E73",
+      "text_color": "#FFFFFF"
+    },
+    "created_at": "2025-09-20T14:00:00Z"
+  },
+  {
+    "id": "card_004",
+    "title": "Digital Detox Challenge",
+    "rating": 4.7,
+    "rating_scale": 5.0,
+    "reviews_count": 22,
+    "summary": "Reducing screen time helped me reconnect with real life.",
+    "excerpt": "I replaced late-night scrolling with reading and journaling...",
+    "reviewer": {
+      "name": "Arun Das",
+      "roles": ["Developer"]
+    },
+    "theme": {
+      "background_color": "#00B07A",
+      "text_color": "#FFFFFF"
+    },
+    "created_at": "2025-08-11T09:30:10Z"
+  },
+  {
+    "id": "card_005",
+    "title": "Hydration Habit",
+    "rating": 4.9,
+    "rating_scale": 5.0,
+    "reviews_count": 11,
+    "summary": "Drinking enough water each day boosted my energy levels.",
+    "excerpt": "Tracking my water intake with reminders worked wonders...",
+    "reviewer": {
+      "name": "Sofia Roy",
+      "roles": ["Fitness Blogger"]
+    },
+    "theme": {
+      "background_color": "#008F66",
+      "text_color": "#FFFFFF"
+    },
+    "created_at": "2025-07-05T17:45:00Z"
+  },
+  {
+    "id": "card_006",
+    "title": "Morning Journaling",
+    "rating": 5.0,
+    "rating_scale": 5.0,
+    "reviews_count": 17,
+    "summary": "Writing daily reflections cleared my mind and improved focus.",
+    "excerpt": "Journaling five minutes every morning reduced stress...",
+    "reviewer": {
+      "name": "Tanmoy Halder",
+      "roles": ["Life Coach"]
+    },
+    "theme": {
+      "background_color": "#009D71",
+      "text_color": "#FFFFFF"
+    },
+    "created_at": "2025-06-14T13:50:00Z"
+  },
+  {
+    "id": "card_007",
+    "title": "Workout Consistency",
+    "rating": 4.8,
+    "rating_scale": 5.0,
+    "reviews_count": 30,
+    "summary": "Staying consistent with short workouts made fitness enjoyable.",
+    "excerpt": "Even 20-minute daily sessions showed visible progress...",
+    "reviewer": {
+      "name": "Priya Chatterjee",
+      "roles": ["Researcher", "Doctor"]
+    },
+    "theme": {
+      "background_color": "#00B886",
+      "text_color": "#FFFFFF"
+    },
+    "created_at": "2025-05-22T09:15:00Z"
+  },
+  {
+    "id": "card_008",
+    "title": "Gratitude Practice",
+    "rating": 5.0,
+    "rating_scale": 5.0,
+    "reviews_count": 9,
+    "summary": "Listing three things I’m grateful for daily shifted my mindset.",
+    "excerpt": "It helped me focus more on the positive parts of my day...",
+    "reviewer": {
+      "name": "Farhan Ali",
+      "roles": ["Wellness Consultant"]
+    },
+    "theme": {
+      "background_color": "#00A163",
+      "text_color": "#FFFFFF"
+    },
+    "created_at": "2025-04-30T18:40:00Z"
+  },
+  {
+    "id": "card_009",
+    "title": "Daily Meditation",
+    "rating": 4.7,
+    "rating_scale": 5.0,
+    "reviews_count": 20,
+    "summary": "Meditating for 10 minutes daily improved my focus and calmness.",
+    "excerpt": "Mindful breathing became a game-changer for my stress levels...",
+    "reviewer": {
+      "name": "Nabila K.",
+      "roles": ["Psychologist", "Therapist"]
+    },
+    "theme": {
+      "background_color": "#00A974",
+      "text_color": "#FFFFFF"
+    },
+    "created_at": "2025-03-19T15:55:00Z"
+  },
+  {
+    "id": "card_010",
+    "title": "Reading Before Bed",
+    "rating": 4.9,
+    "rating_scale": 5.0,
+    "reviews_count": 18,
+    "summary": "Replacing my phone with books improved my sleep quality.",
+    "excerpt": "Falling asleep became easier and mornings felt more refreshing...",
+    "reviewer": {
+      "name": "Ritu Sinha",
+      "roles": ["Software Engineer"]
+    },
+    "theme": {
+      "background_color": "#00AA80",
+      "text_color": "#FFFFFF"
+    },
+    "created_at": "2025-02-11T11:20:00Z"
+  }
+]

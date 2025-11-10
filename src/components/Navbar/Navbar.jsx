@@ -80,7 +80,7 @@ const Navbar = () => {
         whileTap={{
             scale:0.8
         }}
- className='btn btn-primary'><Link to='/login' className="">Login</Link></motion.div>
+ className='btn '><Link to='/login' className="">Login</Link></motion.div>
  }
   </div>
 </div>
