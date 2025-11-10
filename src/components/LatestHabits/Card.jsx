@@ -81,12 +81,12 @@ const StyledWrapper = styled.div`
   .card {
     display: block;
     position: relative;
-    max-width: 450px;
+    // max-width: 450px;
     // max-height: 320px;
     background-color: #059669;
     border-radius: 10px;
     padding: 2em 1.2em;
-    margin: 12px;
+    // margin: 12px;
     text-decoration: none;
     z-index: 0;
     overflow: hidden;

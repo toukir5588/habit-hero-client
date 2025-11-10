@@ -1,17 +1,17 @@
-import React from 'react';
-import LatestHabits from '../LatestHabits/LatestHabits';
-import Hero from '../Hero/Hero';
+import React from "react";
+import LatestHabits from "../LatestHabits/LatestHabits";
+import Hero from "../Hero/Hero";
+import MakingLives from "../Makinglives/Makinglives";
 
 const Home = () => {
-    return (
+  return (
     <div>
-            <Hero/>
-           
-            
-            <LatestHabits/>
-        
+      <Hero />
+
+      <LatestHabits />
+      <MakingLives/>
     </div>
-    );
+  );
 };
 
 export default Home;

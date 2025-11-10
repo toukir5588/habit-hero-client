@@ -20,7 +20,7 @@ const LatestHabits = () => {
     return (
       <div className='max-w-11/12 mx-auto my-20'>
         <h1 className='text-4xl text-center mb-5 font-semibold '>Latest Habits</h1>
-          <div className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ml-10 md:ml-20 items-center w-11/12 mx-auto'>
+          <div className='grid  grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-5 p-4 items-center justify-center '>
             {
                 habitsData.map((habit)=><Card
                 key={habit._id}
