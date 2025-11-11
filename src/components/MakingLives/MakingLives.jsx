@@ -2,131 +2,92 @@ import React from "react";
 import styled from "styled-components";
 
 import makingImg from "../../assets/control.png";
-import { FaDatabase } from "react-icons/fa";
-import { PiDownloadSimpleFill } from "react-icons/pi";
-import { MdOutlineKeyboardVoice } from "react-icons/md";
-import { RiBatteryChargeLine } from "react-icons/ri";
-import { IoAccessibilityOutline } from "react-icons/io5";
-import { TbHomeSignal } from "react-icons/tb";
+
 import AnimationY from "../../Animation/AnimationY";
+import AnimationLTR from "../../Animation/AnimationLTR";
+import AnimationRTL from "../../Animation/AnimationRTL";
 
 const MakingLives = () => {
   return (
     <AnimationY>
+           
+
         <div
-      className="w-full relative  bg-cover bg-center  mx-auto my-15 flex justify-center items-center "
+      className="w-full relative  bg-cover bg-center  mx-auto my-15 flex flex-col justify-center items-center "
       style={{
         backgroundImage: `url(${makingImg})`,
         backgroundColor: "#0000",
       }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
-      <div className="max-w-6xl relative z-10 mx-auto my-20 py-30 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 ">
+       <div><h1 className="text-4xl relative z-10 text-white mt-20 text-center font-semibold">Why Build Habits?</h1></div>
+      <div className="max-w-6xl relative z-10 mx-auto my-20 px-5 py-10 grid grid-cols-1 md:grid-cols-2  gap-x-8 gap-y-10 ">
         
-        <AnimationY>
+        <AnimationLTR>
             <div>
           <StyledWrapper>
             <div className="card hover:bg-gray-400 hover:text-white  ">
               <div className="card-details ">
-                <FaDatabase color="#ffff" size="25px" />
-                <p className="text-title">Data Safety</p>
+                <h1 className="text-2xl">🎯</h1>
+                <p className="text-title">Better Focus</p>
                 <p className="text-body ">
-                  Sodales tortor porta ultrices finibus magnis purus integer
-                  tempor.
+                Building consistent habits helps improve concentration and allows you to stay focused on your goals for longer periods.
                 </p>
               </div>
             </div>
           </StyledWrapper>
         </div>
-        </AnimationY>
+        </AnimationLTR>
 
-        <AnimationY>
+        <AnimationRTL>
             <div>
           <StyledWrapper>
             <div className="card hover:bg-gray-400 hover:text-white ">
               <div className="card-details">
-                <PiDownloadSimpleFill color="#ffff" size="30px" />
-                <p className="text-title">Plug & Play</p>
+                <h1 className="text-2xl">⚡</h1>
+                <p className="text-title">Improved Productivity</p>
                 <p className="text-body">
-                  Sodales tortor porta ultrices finibus magnis purus integer
-                  tempor.
+                  Good habits reduce wasted time, increase efficiency, and help you accomplish more each day.
                 </p>
               </div>
             </div>
           </StyledWrapper>
         </div>
-        </AnimationY>
+        </AnimationRTL>
 
-     <AnimationY>
+     <AnimationLTR>
            <div>
           <StyledWrapper>
             <div className="card hover:bg-gray-400 hover:text-white ">
               <div className="card-details">
-                <MdOutlineKeyboardVoice color="#ffff" size="30px" />
-                <p className="text-title">Voice Control</p>
+                <h1 className="text-2xl">🌸</h1>
+                <p className="text-title">Reduced Stress</p>
                 <p className="text-body">
-                  Sodales tortor porta ultrices finibus magnis purus integer
-                  tempor.
+                 Following a steady routine lowers anxiety and stress, helping you feel calm and balanced throughout the day.
                 </p>
               </div>
             </div>
           </StyledWrapper>
         </div>
-     </AnimationY>
+     </AnimationLTR>
 
-       <AnimationY>
+       <AnimationRTL>
          <div>
           <StyledWrapper>
             <div className="card hover:bg-gray-400 hover:text-white ">
               <div className="card-details">
-                <RiBatteryChargeLine color="#ffff" size="25px" />
+                <h1 className="text-2xl">📈</h1>
 
-                <p className="text-title">Save Energy</p>
+                <p className="text-title">Personal Growth</p>
                 <p className="text-body">
-                  Sodales tortor porta ultrices finibus magnis purus integer
-                  tempor.
+                  Small daily habits lead to self-discipline, confidence, and long-term personal development.
                 </p>
               </div>
             </div>
           </StyledWrapper>
         </div>
-       </AnimationY>
+       </AnimationRTL>
 
-      <AnimationY>
-          <div>
-          <StyledWrapper>
-            <div className="card hover:bg-gray-400 hover:text-white ">
-              <div className="card-details">
-                <IoAccessibilityOutline color="#ffff" size="25px" />
-
-                <p className="text-title">Remote Access</p>
-                <p className="text-body">
-                  Sodales tortor porta ultrices finibus magnis purus integer
-                  tempor.
-                </p>
-              </div>
-            </div>
-          </StyledWrapper>
-        </div>
-      </AnimationY>
-
-        
-       <AnimationY>
-         <div>
-          <StyledWrapper>
-            <div className="card hover:bg-gray-400 hover:text-white ">
-              <div className="card-details">
-                <TbHomeSignal color="#ffff" size="25px" />
-                <p className="text-title">Safety Home</p>
-                <p className="text-body">
-                  Sodales tortor porta ultrices finibus magnis purus integer
-                  tempor.
-                </p>
-              </div>
-            </div>
-          </StyledWrapper>
-        </div>
-       </AnimationY>
 
       </div>
     </div>

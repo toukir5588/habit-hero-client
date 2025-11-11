@@ -9,19 +9,19 @@ import AnimationLTR from "../Animation/AnimationLTR";
 import AnimationRTL from "../Animation/AnimationRTL";
 
 const Login = () => {
-  const { signUpGoogle, signInGoogle, setUser, forgotPasswordFunc } =
+  const { signInWithGoogle, signInGoogle, setUser, forgotPasswordFunc } =
     use(AuthContext);
   const [eye, setEye] = useState(false);
   const navigate = useNavigate();
   const emailRef = useRef(null);
 
   const handleGoogleSignin = () => {
-    signUpGoogle()
+    signInWithGoogle()
       .then((result) => {
         const user = result.user;
         setUser(user);
         toast.success("your account is success");
-        navigate("/category/1");
+        navigate("/");
 
         // console.log(user);
       })

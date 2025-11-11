@@ -20,7 +20,7 @@ const Navbar = () => {
             
             setUser(null)
             toast.success("your logOut is success");
-            navigate('/auth/login')
+            navigate('/login')
             // console.log(user);
           })
           .catch((error) => {

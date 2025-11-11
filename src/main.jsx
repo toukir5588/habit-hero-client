@@ -12,6 +12,8 @@ import Register from './components/Register/Register.jsx';
 import AllHabits from './AllHabits/AllHabits.jsx';
 import Login from './Login/Login.jsx';
 import { ToastContainer } from 'react-toastify';
+import HabitDetails from './components/HabitDetails/HabitDetails.jsx';
+import PrivateRoute from './Routes/PrivateRoute.jsx';
 
 
 const router = createBrowserRouter([
@@ -43,11 +45,11 @@ const router = createBrowserRouter([
       //   path: 'myBids',
       //   element: <PrivateRoute><MyBids></MyBids></PrivateRoute>
       // },
-      // {
-      //   path: 'productDetails/:id',
-      //   loader: ({params}) => fetch(`http://localhost:3000/products/${params.id}`),
-      //   element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>
-      // }
+      {
+        path: '/habitDetails/:id',
+        loader: ({params}) => fetch(`http://localhost:3000/habits/${params.id}`),
+        element: <PrivateRoute><HabitDetails></HabitDetails></PrivateRoute>
+      }
     ]
   },
 ]);

@@ -4,8 +4,10 @@ import AnimationY from "../../Animation/AnimationY";
 import AnimationLTR from "../../Animation/AnimationLTR";
 import AnimationRTL from "../../Animation/AnimationRTL";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+import { Link } from "react-router";
 
 const Card = ({ habit }) => {
+  
   return (
     <AnimationY>
       <div>
@@ -28,7 +30,9 @@ const Card = ({ habit }) => {
               <div className="go-arrow">→</div>
             </div>
            <AnimationY>
+             <Link to={`/habitDetails/${habit._id}`}>
              <button className="btn w-full mt-7 transform transition-transform duration-200 ease-out hover:scale-110">Vew details <MdOutlineKeyboardDoubleArrowRight /></button>
+             </Link>
            </AnimationY>
           </div>
         </StyledWrapper>
