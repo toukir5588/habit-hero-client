@@ -36,7 +36,9 @@ const Navbar = () => {
     const link = <>
       <li><NavLink to='/'>Home</NavLink></li>
       <li><NavLink to='/allHabits'>All Habits</NavLink></li>
-      <li><NavLink to='/my-profile'>My Profile</NavLink></li>
+     { user &&  <li><NavLink to='/addHabit'>Add Habit</NavLink></li>}
+     {user && <li><NavLink to='/my-profile'>My Profile</NavLink></li>}
+      
     
     </>
     return (
@@ -53,7 +55,7 @@ const Navbar = () => {
         {link}
       </ul>
     </div>
-   <NavLink to="/" className=" font-bold text-2xl ">Habit-<span>Hero</span></NavLink>
+   <Link to="/" className=" font-bold text-lg md:text-2xl ">Habit-<span>Hero</span></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -76,14 +78,19 @@ const Navbar = () => {
     <Link  onClick={handleLogout} className="btn btn-secondary w-full mt-5">Logout</Link>
   </div>
 </div>
-:  <motion.div
+:  <div
         whileTap={{
             scale:0.8
         }}
- className='btn '><Link to='/login' className="">Login</Link></motion.div>
+ className=' '> <Link to='/login' className="btn mr-3.5">Login</Link>
+ <Link to='/register' className="btn">SignUp</Link>
+ 
+ </div>
  }
   </div>
 </div>
+
+
         </div>
     );
 };

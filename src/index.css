@@ -15,6 +15,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+.active{
+  color: red;
+}
+
 .gb-gradient {
   @apply bg-gradient-to-r from-[#10b981] to-[#059669];
 }

@@ -13,20 +13,19 @@ const Hero = () => {
         </AnimationLTR>
         <AnimationRTL>
           <h1 className=" text-3xl md:text-6xl font-bold">
-            It's Time <span className="text-2xl md:text-4xl font-medium">for</span> <br />
+            It's Time{" "}
+            <span className="text-2xl md:text-4xl font-medium">for</span> <br />
             Smart Living
           </h1>
         </AnimationRTL>
         <AnimationLTR>
-
-        <p className="text-xl">A system designed for your ease</p>
+          <p className="text-xl">A system designed for your ease</p>
         </AnimationLTR>
-         <AnimationRTL>
-
-        <button className="btn gb-gradient">
-          Get Started <GoChevronRight />
-        </button>
-         </AnimationRTL>
+        <AnimationRTL>
+          <button className="btn gb-gradient">
+            Get Started <GoChevronRight />
+          </button>
+        </AnimationRTL>
       </div>
     </>
   );

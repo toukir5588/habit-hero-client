@@ -6,34 +6,35 @@ import AnimationRTL from "../../Animation/AnimationRTL";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link } from "react-router";
 
-const Card = ({ habit }) => {
-  
+const AllHabitCard= ({ habit }) => {
   return (
     <AnimationY>
       <div>
         <StyledWrapper>
           <div className="card space-y-5">
-           <AnimationLTR>
-             <div className="w-full h-[200px]">
-              <img
-                className="h-full w-full rounded-2xl"
-                src={habit.image}
-                alt=""
-              />
-            </div>
-           </AnimationLTR>
-           <AnimationRTL>
-             <p className="card-title h-4 mt-5">{habit.title}</p>
-            <p className="small-desc line-clamp-3 ">{habit.description}</p>
-           </AnimationRTL>
+            <AnimationLTR>
+              <div className="w-full h-[200px]">
+                <img
+                  className="h-full w-full rounded-2xl"
+                  src={habit.image}
+                  alt=""
+                />
+              </div>
+            </AnimationLTR>
+            <AnimationRTL>
+              <p className="card-title h-4 mt-5">{habit.title}</p>
+              <p className="small-desc line-clamp-3 ">{habit.description}</p>
+            </AnimationRTL>
             <div className="go-corner">
               <div className="go-arrow">→</div>
             </div>
-           <AnimationY>
-             <Link to={`/habitDetails/${habit._id}`}>
-             <button className="btn w-full mt-7 transform transition-transform duration-200 ease-out hover:scale-110">Vew details <MdOutlineKeyboardDoubleArrowRight /></button>
-             </Link>
-           </AnimationY>
+            <AnimationY>
+              <Link to={`/habitDetails/${habit._id}`}>
+                <button className="btn w-full mt-7 transform transition-transform duration-200 ease-out hover:scale-110">
+                  Vew details <MdOutlineKeyboardDoubleArrowRight />
+                </button>
+              </Link>
+            </AnimationY>
           </div>
         </StyledWrapper>
       </div>
@@ -86,7 +87,7 @@ const StyledWrapper = styled.div`
     display: block;
     position: relative;
     // max-width: 450px;
-    height: 500px;
+    // max-height: 320px;
     background-color: #059669;
     border-radius: 10px;
     padding: 2em 1.2em;
@@ -128,4 +129,4 @@ const StyledWrapper = styled.div`
   }
 `;
 
-export default Card;
+export default AllHabitCard;

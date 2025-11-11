@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import makingImg from "../../assets/control.png";
+import makingImg from "../../assets/control1.png";
 
 import AnimationY from "../../Animation/AnimationY";
 import AnimationLTR from "../../Animation/AnimationLTR";
