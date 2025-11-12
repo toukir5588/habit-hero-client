@@ -21,18 +21,24 @@ const AddHabit = () => {
     
 
      
-           axiosIntens.post('/habits',{
-             title, category, image, reminderTime,userName,userEmail,  description
-           })
-            .then(res => {
-                console.log(res.data);
-                toast.success('your habit is successfully added')
-                
-            })
-            .catch(error=>{
-                console.log('error facing habits',error);
-                toast.error(error.message)
-            })
+  const newHabit = {
+  title,
+  category,
+  reminderTime,
+  userName,
+  image,
+  description,
+  email: user.email 
+};
+
+axiosIntens.post('/habits', newHabit)
+  .then(res => {
+    toast.success('Habit successfully added!');
+  })
+  .catch(error => {
+    toast.error(error.message);
+  });
+
        
 
     

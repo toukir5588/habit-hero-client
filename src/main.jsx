@@ -15,6 +15,7 @@ import { ToastContainer } from "react-toastify";
 import HabitDetails from "./components/HabitDetails/HabitDetails.jsx";
 import PrivateRoute from "./Routes/PrivateRoute.jsx";
 import AddHabit from "./components/AddHabit/AddHabit.jsx";
+import MyHabits from "./components/MyHabits/Myhabits.jsx";
 
 const router = createBrowserRouter([
   {
@@ -37,10 +38,10 @@ const router = createBrowserRouter([
         path: "/login",
         Component: Login,
       },
-      // {
-      //   path: 'myProducts',
-      //   element: <PrivateRoute><MyProducts></MyProducts></PrivateRoute>
-      // },
+      {
+        path: 'myHabit',
+        element: <PrivateRoute><MyHabits></MyHabits> </PrivateRoute>
+      },
       {
         path: '/addHabit',
         element: <PrivateRoute><AddHabit/></PrivateRoute>

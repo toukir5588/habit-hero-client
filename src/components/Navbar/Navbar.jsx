@@ -11,7 +11,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 const Navbar = () => {
   const navigate = useNavigate();
   const {user,signOutUser,setUser} = useContext(AuthContext);
-  // console.log(user);
+  
 
 
   const handleLogout = ()=>{
@@ -37,7 +37,7 @@ const Navbar = () => {
       <li><NavLink to='/'>Home</NavLink></li>
       <li><NavLink to='/allHabits'>All Habits</NavLink></li>
      { user &&  <li><NavLink to='/addHabit'>Add Habit</NavLink></li>}
-     {user && <li><NavLink to='/my-profile'>My Profile</NavLink></li>}
+     {user && <li><NavLink to='/myHabit'>My Habits</NavLink></li>}
       
     
     </>
