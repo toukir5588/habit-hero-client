@@ -10,13 +10,13 @@ const LatestHabits = () => {
   const { loading } = useContext(AuthContext);
 
   const [habitsData, setHabitData] = useState([]);
-  console.log(habitsData);
+  // console.log(habitsData);
 
   useEffect(() => {
     axiosIntens
       .get("/latest-habits")
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setHabitData(res.data);
       })
       .catch((error) => {

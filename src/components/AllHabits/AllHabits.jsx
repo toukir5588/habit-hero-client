@@ -10,24 +10,24 @@ const AllHabits = () => {
   const axiosIntens = useAxiosSecure();
 
   const [habitsData, setHabitData] = useState([]);
-  console.log(habitsData);
+  // console.log(habitsData);
 
   useEffect(() => {
     axiosIntens
       .get("/habits")
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setHabitData(res.data);
       })
       .catch((error) => {
-        console.log("error facing habits", error);
+        // console.log("error facing habits", error);
       });
   }, [axiosIntens]);
   return (
     <div className="max-w-11/12 mx-auto min-h-[400px] my-20">
       <title>All-Habits-Page</title>
       <h1 className="text-4xl text-center mb-5 font-semibold ">
-        Latest Habits
+        All Habits
       </h1>
       {loading ? (
         <LoadingSpin></LoadingSpin>

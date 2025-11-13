@@ -16,14 +16,14 @@ const AddHabit = () => {
     const description = e.target.description.value;
     const userName = e.target.name.value;
     const userEmail = e.target.email.value;
-    console.log(
-      title,
-      category,
-      reminderTime,
-      userName,
-      userEmail,
-      description
-    );
+    // console.log(
+    //   title,
+    //   category,
+    //   reminderTime,
+    //   userName,
+    //   userEmail,
+    //   description
+    // );
 
     const newHabit = {
       title,
@@ -39,20 +39,13 @@ const AddHabit = () => {
       .post("/habits", newHabit)
       .then((res) => {
         toast.success("Habit successfully added!");
+        e.target.reset();
       })
       .catch((error) => {
         toast.error(error.message);
       });
 
-    // setHabitTitle("");
-    // setDescription("");
-    // setCategory("");
-    // setReminderTime("");
-    // setImage(null);
-    // setPreview("");
-    // setUploadedImageUrl("");
-    // setUploadStatus("");
-    // setUploadError("");
+    
   };
 
   return (

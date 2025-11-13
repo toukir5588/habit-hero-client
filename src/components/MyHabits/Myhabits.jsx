@@ -9,7 +9,7 @@ const MyHabits = () => {
   const { user, loading } = useContext(AuthContext);
   const [habits, setHabits] = useState([]);
   const [selectedHabit, setSelectedHabit] = useState(null);
-  console.log(habits);
+  // console.log(habits);
   const initialAxios = useAxiosSecure();
 
   useEffect(() => {
@@ -29,12 +29,12 @@ const MyHabits = () => {
   const openUpdateModal = (habits) => {
     setSelectedHabit(habits);
     document.getElementById("my_modal_5").showModal();
-    console.log(habits);
+    // console.log(habits);
   };
   const handleUpdateHabit = async (e, id) => {
     e.preventDefault();
     const form = e.target;
-    console.log(id);
+    // console.log(id);
     const updatedHabit = {
       title: form.habitTitle.value,
       category: form.category.value,
