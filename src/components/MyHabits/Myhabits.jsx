@@ -125,7 +125,7 @@ const MyHabits = () => {
 
   return (
     <div className="md:max-w-11/12 h-screen md:px-4  mx-auto">
-      {habits.length == 0 ? (
+      {loading ? (
         <LoadingSpin></LoadingSpin>
       ) : (
         <div className="  min-h-[400px]">
