@@ -16,10 +16,12 @@ import HabitDetails from "./components/HabitDetails/HabitDetails.jsx";
 import PrivateRoute from "./Routes/PrivateRoute.jsx";
 import AddHabit from "./components/AddHabit/AddHabit.jsx";
 import MyHabits from "./components/MyHabits/Myhabits.jsx";
+import Error from "./components/Error/Error.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement:<Error></Error>,
     Component: RootLayout,
     children: [
       {

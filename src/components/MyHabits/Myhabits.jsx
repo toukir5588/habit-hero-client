@@ -89,6 +89,35 @@ const MyHabits = () => {
     });
   };
 
+  const handleMarkComplete = async (id) => {
+  try {
+    const res = await initialAxios.patch(`/habits/complete/${id}`);
+
+    if (res.data.modifiedCount > 0) {
+      const today = new Date().toISOString().split("T")[0];
+
+      setHabits((prev) =>
+        prev.map((h) =>
+          h._id === id
+            ? {
+                ...h,
+                completionHistory: [...(h.completionHistory || []), today],
+              }
+            : h
+        )
+      );
+
+      toast.success("Done!", "Habit marked complete for today 🎉", "success");
+    } else {
+      toast.info("Oops! Already marked complete for today!");
+    }
+  } catch (err) {
+    console.error(err);
+    toast.error("Error", "Failed to mark habit complete", "error");
+  }
+};
+
+
   return (
     <div className=" md:max-w-11/12  md:px-4  mx-auto min-h-[400px]">
       <h3 className="text-xl font-bold text-center mt-10 mb-4">
@@ -131,7 +160,7 @@ const MyHabits = () => {
                       Delete
                     </button>
                     <button
-                      onClick={() => handleDeleteHabit(data._id)}
+                      onClick={() => handleMarkComplete(data._id)}
                       className="btn btn-outline text-[10px] md:text-[12px]  text-green-500"
                     >
                       Mark Complete
