@@ -65,6 +65,7 @@ const MyHabits = () => {
       console.error(err);
       Swal.fire("Error", "Failed to update habit", "error");
     }
+    
   };
   const handleDeleteHabit = (_id) => {
     Swal.fire({
@@ -80,7 +81,7 @@ const MyHabits = () => {
         fetch(`https://habit-hero-api-server.vercel.app/habits/${_id}`, {
           method: "DELETE",
         })
-        
+
         
           .then((res) => res.json())
           .then((data) => {
@@ -211,8 +212,8 @@ const MyHabits = () => {
                         }
                       >
                         <fieldset className="fieldset  space-y-2">
-                          <div className="flex w-full gap-3">
-                            <div className="flex-1">
+                          <div className="flex w-full flex-col md:flex-row gap-3">
+                            <div className="flex-1 ">
                               <label className="label">Habit Title</label>
                               <input
                                 type="text"
@@ -240,7 +241,7 @@ const MyHabits = () => {
                             </div>
                           </div>
 
-                          <div className="flex w-full gap-3 justify-between">
+                          <div className="flex w-full gap-3 flex-col md:flex-row justify-between">
                             <div className="flex-1">
                               <label className="label">Reminder Time</label>
                               <input

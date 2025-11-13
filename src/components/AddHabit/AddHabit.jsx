@@ -57,13 +57,13 @@ const AddHabit = () => {
 
   return (
     <div className="max-w-11/12 mx-auto my-20 flex items-center justify-center">
-      <div className="card  from-indigo-50 to-white w-[600px] shrink-0 shadow-2xl">
+      <div className="card  from-indigo-50 to-white max-w-[600px] shrink-0 shadow-2xl">
         <div className="card-body w-full">
           <h1 className="text-2xl font-bold text-center mb-2">Add Habit</h1>
           <form onSubmit={handleAddHabit}>
             <fieldset className="fieldset  space-y-2">
-              <div className="flex w-full gap-3">
-                <div className="flex-1">
+              <div className="flex w-full gap-3 flex-col md:flex-row">
+                <div className="md:flex-1">
                   <label className="label">Habit Title</label>
                   <input
                     type="text"
@@ -74,7 +74,7 @@ const AddHabit = () => {
                   />
                 </div>
 
-                <div className="flex-1">
+                <div className="flex-1 ">
                   <label className="label">Category</label>
                   <select
                     name="category"
@@ -91,8 +91,8 @@ const AddHabit = () => {
                 </div>
               </div>
 
-              <div className="flex w-full gap-3 justify-between">
-                <div className="flex-1">
+              <div className="flex w-full flex-col md:flex-row gap-3 justify-between">
+                <div className="md:flex-1">
                   <label className="label">Reminder Time</label>
                   <input
                     type="time"
@@ -102,7 +102,7 @@ const AddHabit = () => {
                   />
                 </div>
 
-                <div className="flex-1">
+                <div className="md:flex-1">
                   <label className="label">Upload Image</label>
                   <input
                     type="url"
