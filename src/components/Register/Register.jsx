@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../contexts/AuthContext";
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 import AnimationY from "../../Animation/AnimationY";
 import AnimationLTR from "../../Animation/AnimationLTR";
 import AnimationRTL from "../../Animation/AnimationRTL";
@@ -13,7 +13,6 @@ const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [eye, setEye] = useState(false);
   const navigate = useNavigate();
-
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -44,7 +43,7 @@ const Register = () => {
         };
 
         // create user in the database
-        fetch("http://localhost:3000/users", {
+        fetch("https://habit-hero-api-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -59,7 +58,7 @@ const Register = () => {
         toast.success("your account is success");
         navigate("/");
       })
-      
+
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -75,95 +74,85 @@ const Register = () => {
 
   return (
     <div className="w-11/12 mx-auto my-10 flex justify-center items-center text-primary">
-     <AnimationY>
-         <div className="card gb-gradient w-full max-w-sm shrink-0  shadow-2xl">
-        <div className="card-body">
-          <h1 className="text-2xl font-bold text-center">
-            Create Your account
-          </h1>
-          <form onSubmit={handleRegister}>
-            <fieldset className="fieldset md:w-80">
-              {/* name */}
-              <label className="label">Name</label>
-                 <AnimationLTR>
-                
-              <input
-                type="text"
-                name="name"
-                className="input text-[#059669]"
-                placeholder="Your Name"
-                required
-                />
-                </AnimationLTR>
-              {/* photoURL */}
-              <label className="label">Photo URL</label>
-
-         <AnimationRTL>
-                    
-              <input
-                type="text"
-                name="photoURL"
-                className="input text-[#059669]"
-                placeholder="Photo URL"
-                required
-                />
-                </AnimationRTL>
-              {/* email */}
-              <label className="label">Email</label>
-              <AnimationLTR>
-
-              <input
-                type="email"
-                name="email"
-                className="input text-[#059669]"
-                placeholder="Email"
-                required
-                />
-                </AnimationLTR>
-              {/* password */}
-              <div className="relative">
-                <label className="label">Password</label>
-                <button
-                  type="button"
-                  onClick={handleEye}
-                  className="btn bg-transparent outline-0 border-0 absolute top-[18px] right-[0px] z-10"
-                >
-                  
-                  {eye ? <FaEye size={20} />: <FaEyeSlash size={20} />}
-                </button>
-                <AnimationRTL>
-                    
-                
-                <input
-                  type={eye ? "text" : "password"}
-                  name="password"
-                  className="input text-[#059669]"
-                  placeholder="Password"
+      <AnimationY>
+        <div className="card gb-gradient w-full max-w-sm shrink-0  shadow-2xl">
+          <div className="card-body">
+            <h1 className="text-2xl font-bold text-center">
+              Create Your account
+            </h1>
+            <form onSubmit={handleRegister}>
+              <fieldset className="fieldset md:w-80">
+                {/* name */}
+                <label className="label">Name</label>
+                <AnimationLTR>
+                  <input
+                    type="text"
+                    name="name"
+                    className="input text-[#059669]"
+                    placeholder="Your Name"
+                    required
                   />
+                </AnimationLTR>
+                {/* photoURL */}
+                <label className="label">Photo URL</label>
+
+                <AnimationRTL>
+                  <input
+                    type="text"
+                    name="photoURL"
+                    className="input text-[#059669]"
+                    placeholder="Photo URL"
+                    required
+                  />
+                </AnimationRTL>
+                {/* email */}
+                <label className="label">Email</label>
+                <AnimationLTR>
+                  <input
+                    type="email"
+                    name="email"
+                    className="input text-[#059669]"
+                    placeholder="Email"
+                    required
+                  />
+                </AnimationLTR>
+                {/* password */}
+                <div className="relative">
+                  <label className="label">Password</label>
+                  <button
+                    type="button"
+                    onClick={handleEye}
+                    className="btn bg-transparent outline-0 border-0 absolute top-[18px] right-[0px] z-10"
+                  >
+                    {eye ? <FaEye size={20} /> : <FaEyeSlash size={20} />}
+                  </button>
+                  <AnimationRTL>
+                    <input
+                      type={eye ? "text" : "password"}
+                      name="password"
+                      className="input text-[#059669]"
+                      placeholder="Password"
+                    />
                   </AnimationRTL>
-              </div>
-              <div>
+                </div>
+                <div></div>
+                <AnimationLTR>
+                  <button className="btn btn-neutral w-full mt-4">
+                    Register
+                  </button>
+                </AnimationLTR>
+              </fieldset>
+            </form>
 
-              
-              </div>
-                 <AnimationLTR>
-                
-              <button
-             
-             className="btn btn-neutral w-full mt-4">Register</button>
-             </AnimationLTR>
-            </fieldset>
-          </form>
-
-          <p className=" font-medium text-center">
-            You have a Already account pleas{" "}
-            <Link className="text-blue-700 hover:underline" to="/login">
-              Login
-            </Link>
-          </p>
+            <p className=" font-medium text-center">
+              You have a Already account pleas{" "}
+              <Link className="text-blue-700 hover:underline" to="/login">
+                Login
+              </Link>
+            </p>
+          </div>
         </div>
-      </div>
-     </AnimationY>
+      </AnimationY>
     </div>
   );
 };

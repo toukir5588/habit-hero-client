@@ -17,11 +17,12 @@ import PrivateRoute from "./Routes/PrivateRoute.jsx";
 import AddHabit from "./components/AddHabit/AddHabit.jsx";
 import MyHabits from "./components/MyHabits/Myhabits.jsx";
 import Error from "./components/Error/Error.jsx";
+import LoadingSpin from "./components/LoadingSpinar/LoadingSpin.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    errorElement:<Error></Error>,
+    errorElement: <Error></Error>,
     Component: RootLayout,
     children: [
       {
@@ -41,17 +42,26 @@ const router = createBrowserRouter([
         Component: Login,
       },
       {
-        path: 'myHabit',
-        element: <PrivateRoute><MyHabits></MyHabits> </PrivateRoute>
+        path: "myHabit",
+        element: (
+          <PrivateRoute>
+            <MyHabits></MyHabits>{" "}
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/addHabit',
-        element: <PrivateRoute><AddHabit/></PrivateRoute>
+        path: "/addHabit",
+        element: (
+          <PrivateRoute>
+            <AddHabit />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/habitDetails/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/habits/${params.id}`),
+          fetch(`https://habit-hero-api-server.vercel.app/habits/${params.id}`),
+        hydrateFallbackElement: <LoadingSpin></LoadingSpin>,
         element: (
           <PrivateRoute>
             <HabitDetails></HabitDetails>

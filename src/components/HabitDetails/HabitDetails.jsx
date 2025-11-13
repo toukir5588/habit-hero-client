@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import useAxiosSecure from "../../useAxios Secure/useAxios Secure";
 import { useLoaderData } from "react-router";
 import { FaClock, FaUser, FaTag } from "react-icons/fa";
 import StreakProgressCard from "./StreakProgressCard/StreakProgressCard";
 import { toast } from "react-toastify";
+import LoadingSpin from "../LoadingSpinar/LoadingSpin";
+import useAxiosSecure from "../../useAxiosSecure/useAxiosSecure";
 
 const HabitDetails = () => {
   const axiosIntens = useAxiosSecure();
@@ -35,31 +36,27 @@ const HabitDetails = () => {
 
   // Complete habit
   const handleCompleteHabit = () => {
-  const today = new Date().toISOString().split("T")[0];
+    const today = new Date().toISOString().split("T")[0];
 
-  if (habitDetails.completionHistory?.includes(today)) {
-    toast.info("Oops! Already marked complete for today!");
-    return; 
-  }
+    if (habitDetails.completionHistory?.includes(today)) {
+      toast.info("Oops! Already marked complete for today!");
+      return;
+    }
 
-  axiosIntens
-    .patch(`/habits/complete/${_id}`)
-    .then((res) => {
-      setHabitDetails((prev) => ({
-        ...prev,
-        completionHistory: [...prev.completionHistory, today],
-      }));
-      toast.success("Done!", "Habit marked complete for today 🎉", "success");
-    })
-    .catch((err) => console.log(err));
-};
+    axiosIntens
+      .patch(`/habits/complete/${_id}`)
+      .then((res) => {
+        setHabitDetails((prev) => ({
+          ...prev,
+          completionHistory: [...prev.completionHistory, today],
+        }));
+        toast.success("Done!", "Habit marked complete for today 🎉", "success");
+      })
+      .catch((err) => console.log(err));
+  };
 
   if (!habitDetails) {
-    return (
-      <p className="text-center text-lg py-10 font-semibold text-gray-500">
-        Data is loading...
-      </p>
-    );
+    return <LoadingSpin />;
   }
 
   const {
@@ -78,13 +75,11 @@ const HabitDetails = () => {
 
   return (
     <div className="max-w-6xl mx-auto my-20 border-2 border-solid border-[#059669] rounded-2xl overflow-hidden shadow-md">
-     
       <div className="bg-gradient-to-r from-emerald-600 to-teal-500 py-3 text-center text-white">
         <h1 className="text-2xl font-semibold">Habit Details</h1>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 p-6 items-center bg-white">
-       
         <div className="flex flex-col">
           <img
             className="w-full h-72 object-cover rounded-xl shadow-md"
@@ -121,7 +116,6 @@ const HabitDetails = () => {
           </button>
         </div>
 
-        
         <div className="flex justify-center items-center">
           <StreakProgressCard streak={streakCount} progress={progressPercent} />
         </div>

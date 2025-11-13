@@ -1,7 +1,7 @@
-import React, { useContext,  } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
-import useAxiosSecure from "../../useAxios Secure/useAxios Secure";
 import { toast } from "react-toastify";
+import useAxiosSecure from "../../useAxiosSecure/useAxiosSecure";
 
 const AddHabit = () => {
   const { user } = useContext(AuthContext);
@@ -16,34 +16,33 @@ const AddHabit = () => {
     const description = e.target.description.value;
     const userName = e.target.name.value;
     const userEmail = e.target.email.value;
-    console.log(title, category, reminderTime,userName,userEmail,  description);
+    console.log(
+      title,
+      category,
+      reminderTime,
+      userName,
+      userEmail,
+      description
+    );
 
-    
+    const newHabit = {
+      title,
+      category,
+      reminderTime,
+      userName,
+      image,
+      description,
+      email: user.email,
+    };
 
-     
-  const newHabit = {
-  title,
-  category,
-  reminderTime,
-  userName,
-  image,
-  description,
-  email: user.email 
-};
-
-axiosIntens.post('/habits', newHabit)
-  .then(res => {
-    toast.success('Habit successfully added!');
-  })
-  .catch(error => {
-    toast.error(error.message);
-  });
-
-       
-
-    
-
-
+    axiosIntens
+      .post("/habits", newHabit)
+      .then((res) => {
+        toast.success("Habit successfully added!");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
 
     // setHabitTitle("");
     // setDescription("");

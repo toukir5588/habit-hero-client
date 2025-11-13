@@ -24,7 +24,7 @@ const Card = ({ habit }) => {
            </AnimationLTR>
            <AnimationRTL>
              <p className="card-title h-4 mt-5">{habit.title}</p>
-            <p className="small-desc line-clamp-3 ">{habit.description}</p>
+            <p className="small-desc line-clamp-3 h-[100px] ">{habit.description}</p>
            </AnimationRTL>
             <div className="go-corner">
               <div className="go-arrow">→</div>
