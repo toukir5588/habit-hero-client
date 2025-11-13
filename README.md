@@ -6,8 +6,8 @@ Track your progress, maintain streaks, and visualize your growth with interactiv
 ---
 
 ## 🚀 Live Demo
-🔗 [Live Site URL](https://your-live-site-link.netlify.app)  
-🔗 [API Server](https://habit-hero-api-server.vercel.app)
+🔗 [Live Site URL](https://habit-hero-5d559.web.app/myHabit)  
+
 
 ---
 
