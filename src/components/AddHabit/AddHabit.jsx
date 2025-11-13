@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../useAxiosSecure/useAxiosSecure";
+import LoadingSpin from "../LoadingSpinar/LoadingSpin";
 
 const AddHabit = () => {
-  const { user } = useContext(AuthContext);
+  const { user , loading } = useContext(AuthContext);
 
   const axiosIntens = useAxiosSecure();
   const handleAddHabit = (e) => {
@@ -49,9 +50,9 @@ const AddHabit = () => {
   };
 
   return (
-    <div className="max-w-11/12 mx-auto my-20 flex items-center justify-center">
+    <div className="max-w-11/12 mx-auto  my-20 flex items-center h-screen justify-center">
       <title>Add-habit-page</title>
-      <div className="card  from-indigo-50 to-white max-w-[600px] shrink-0 shadow-2xl">
+     {loading ? <LoadingSpin></LoadingSpin> :  <div className="card  from-indigo-50 to-white max-w-[600px]  shrink-0 shadow-2xl">
         <div className="card-body w-full">
           <h1 className="text-2xl font-bold text-center mb-2">Add Habit</h1>
           <form onSubmit={handleAddHabit}>
@@ -137,7 +138,7 @@ const AddHabit = () => {
             </fieldset>
           </form>
         </div>
-      </div>
+      </div>}
     </div>
   );
 };

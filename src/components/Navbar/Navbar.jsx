@@ -87,7 +87,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {/* <Link to='/auth/login' className="btn">Login</Link> */}
-          {user ? (
+          {loading? <span className="loading text-white loading-infinity loading-xl"></span> : user ? (
             <div className="dropdown dropdown-hover">
               <div tabIndex={0} role="button" className=" m-1">
                 {/* {

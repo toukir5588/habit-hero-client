@@ -20,7 +20,7 @@ const LatestHabits = () => {
         setHabitData(res.data);
       })
       .catch((error) => {
-        console.log("error facing habits", error);
+        // console.log("error facing habits", error);
       });
   }, [axiosIntens]);
   return (
@@ -28,7 +28,7 @@ const LatestHabits = () => {
       <h1 className="text-4xl text-center mb-5 font-semibold ">
         Latest Habits
       </h1>
-      {loading ? (
+      {habitsData.length == 0 ? (
         <LoadingSpin></LoadingSpin>
       ) : (
         <div className="grid  grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-5 p-4 items-center justify-center ">
