@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import LoadingSpin from "../LoadingSpinar/LoadingSpin";
 import useAxiosSecure from "../../useAxiosSecure/useAxiosSecure";
+import { Tooltip } from "react-tooltip";
 
 const MyHabits = () => {
   const { user, loading } = useContext(AuthContext);
@@ -160,23 +161,31 @@ const MyHabits = () => {
                     <td>
                       <div className="flex gap-2 flex-col md:flex-row ">
                         <button
+                        data-tooltip-id="my-tooltip"
+  data-tooltip-content="Click This button For Update"
                           onClick={() => openUpdateModal(data)}
                           className="btn btn-outline  text-[10px] md:text-[12px] text-yellow-700"
                         >
                           Update
                         </button>
                         <button
+                        data-tooltip-id="my-tooltip"
+  data-tooltip-content="Click This button For Delete"
                           onClick={() => handleDeleteHabit(data._id)}
                           className="btn btn-outline text-[10px] md:text-[12px]  text-red-500"
                         >
                           Delete
                         </button>
+                        
                         <button
+                        data-tooltip-id="my-tooltip"
+  data-tooltip-content="Click This button For Mark Complete"
                           onClick={() => handleMarkComplete(data._id)}
                           className="btn btn-outline text-[10px] md:text-[12px]  text-green-500"
                         >
                           Mark Complete
                         </button>
+                        <Tooltip id="my-tooltip"/>
                       </div>
                     </td>
                   </tr>
@@ -290,9 +299,13 @@ const MyHabits = () => {
                             className="input input-bordered bg-gray-100 w-full"
                           />
 
-                          <button className="btn btn-neutral mt-4 w-full">
+                          <button 
+                          data-tooltip-id="my-tooltip"
+  data-tooltip-content="HPlease click this button and Update Data.!"
+                          className="btn btn-neutral mt-4 w-full">
                             Add Habit
                           </button>
+                          <Tooltip id="my-tooltip"/>
                         </fieldset>
                       </form>
                     )}

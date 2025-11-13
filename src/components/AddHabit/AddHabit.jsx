@@ -3,6 +3,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../useAxiosSecure/useAxiosSecure";
 import LoadingSpin from "../LoadingSpinar/LoadingSpin";
+import { Tooltip } from "react-tooltip";
 
 const AddHabit = () => {
   const { user , loading } = useContext(AuthContext);
@@ -134,7 +135,11 @@ const AddHabit = () => {
                 className="input input-bordered bg-gray-100 w-full"
               />
 
-              <button className="btn btn-neutral mt-4 w-full">Add Habit</button>
+              <button
+              data-tooltip-id="my-tooltip"
+  data-tooltip-content="Please click this button and submit this form.!"
+               className="btn btn-neutral mt-4 w-full">Add Habit</button>
+              <Tooltip id="my-tooltip"/>
             </fieldset>
           </form>
         </div>
