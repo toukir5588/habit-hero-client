@@ -24,7 +24,8 @@ const AllHabits = () => {
       });
   }, [axiosIntens]);
   return (
-    <div className="max-w-11/12 mx-auto my-20">
+    <div className="max-w-11/12 mx-auto min-h-[400px] my-20">
+      <title>All-Habits-Page</title>
       <h1 className="text-4xl text-center mb-5 font-semibold ">
         Latest Habits
       </h1>

@@ -9,7 +9,7 @@ import { Link } from "react-router";
 const AllHabitCard= ({ habit }) => {
   return (
     <AnimationY>
-      <div>
+      <div>       
         <StyledWrapper>
           <div className="card space-y-5">
             <AnimationLTR>

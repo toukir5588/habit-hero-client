@@ -57,6 +57,7 @@ const AddHabit = () => {
 
   return (
     <div className="max-w-11/12 mx-auto my-20 flex items-center justify-center">
+      <title>Add-habit-page</title>
       <div className="card  from-indigo-50 to-white max-w-[600px] shrink-0 shadow-2xl">
         <div className="card-body w-full">
           <h1 className="text-2xl font-bold text-center mb-2">Add Habit</h1>

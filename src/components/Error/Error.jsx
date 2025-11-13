@@ -6,6 +6,8 @@ import styled from 'styled-components';
 const Error = () => {
   return (
   <div className='w-screen h-screen flex justify-center flex-col items-center'>
+    <title>Error-404</title>
+    <title>Error-page</title>
       <StyledWrapper>
       <div className="main_wrapper">
         <div className="main">

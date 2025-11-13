@@ -75,6 +75,7 @@ const HabitDetails = () => {
 
   return (
     <div className="max-w-6xl mx-auto my-20 border-2 border-solid border-[#059669] rounded-2xl overflow-hidden shadow-md">
+     <title>{habitDetails?.title}</title>
       <div className="bg-gradient-to-r from-emerald-600 to-teal-500 py-3 text-center text-white">
         <h1 className="text-2xl font-semibold">Habit Details</h1>
       </div>

@@ -84,6 +84,7 @@ const Login = () => {
 
   return (
     <div className="w-11/12 mx-auto my-10 flex justify-center items-center text-primary">
+     <title>Login</title>
       <AnimationY>
         <div className="card gb-gradient w-full max-w-sm shrink-0 shadow-2xl">
           <div className="card-body">
