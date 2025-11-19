@@ -96,7 +96,15 @@ Add new habits with title, category, description, reminder time, and image (ImgB
 "tailwindcss": "^4.1.16"
 
 
+✅ How to Run a React (React Router + Firebase) Project After Cloning
 
+git clone: https://github.com/toukir5588/habit-hero-client.git
+
+
+cd project-folder-name
+
+2️⃣ Node Modules Install 
+ npm install 
 
 
 ## 🏁 Deployment
@@ -105,6 +113,10 @@ Add new habits with title, category, description, reminder time, and image (ImgB
 - **Database:** MongoDB Atlas  
 
 Ensure that all routes reload without errors and users remain authenticated on reload.
+
+
+## How to use your browser
+
 
 ---
 
